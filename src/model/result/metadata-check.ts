@@ -8,6 +8,7 @@ export default class MetadataCheckResult {
     telegram: string;
     twitter: string;
     isMutable: boolean;
+    isOwnershipRevoked: boolean;
     isMintable: boolean;
     isFreezable: boolean;
     isPumpFun: boolean;

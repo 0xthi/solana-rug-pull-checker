@@ -51,6 +51,10 @@ export default class SPLRugchecker {
             rugScore += 100;
             console.log('Mintable: +100 points');
         }
+        if (rugCheckResult.metadata.isOwnershipRevoked === false) {
+            rugScore += 100;
+            console.log('Ownership not revoked: +100 points');
+        }
         if (rugCheckResult.metadata.isFreezable === true) {
             rugScore += 80;
             console.log('Freezable: +80 points');

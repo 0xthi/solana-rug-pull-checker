@@ -36,6 +36,10 @@ export default class MetadataChecker {
         const tokenMetadata = await this.metaplex.nfts().findByMint({ mintAddress: mintAddress });
         if (tokenMetadata) {
             let metadataCheckResult = this.createRugCheckResult(tokenMetadata);
+
+            // Ownership revocation check
+            metadataCheckResult.isOwnershipRevoked = !tokenMetadata.mint.mintAuthorityAddress;
+
             if (
                 tokenMetadata.json?.createdOn !== 'https://pump.fun' &&
                 this.heliusApiKey &&
@@ -68,6 +72,7 @@ export default class MetadataChecker {
 
         return metadataCheckResult;
     }
+
     async getHeliusMetadata(tokenAddress: string, token: MetadataCheckResult) {
         const helius = new Helius(this.heliusApiKey);
         try {
