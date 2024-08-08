@@ -63,6 +63,10 @@ export default class SPLRugchecker {
             rugScore += 50;
             console.log('Mutable: +50 points');
         }
+        if (rugCheckResult.metadata.isPumpFun === true) {
+            rugScore += 400;
+            console.log('Pump fun website: +400 points');
+        }
 
         // Holders checks
         if (!isNaN(rugCheckResult.holders.topHoldersPercentage) && rugCheckResult.holders.topHoldersPercentage !== undefined) {
