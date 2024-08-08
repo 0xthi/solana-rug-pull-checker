@@ -26,4 +26,4 @@ Rug score is determined by all checking features combined. If a token is below 4
 
 ### Note
 
-This SDK determines most tokens and tokens that are listed in Raydium. It may fail sometimes as it is in development.
+This SDK determines most tokens and tokens that are listed in Raydium. It may fail sometimes as it is in development. So use cautiously.
